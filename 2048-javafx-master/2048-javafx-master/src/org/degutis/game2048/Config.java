@@ -6,6 +6,8 @@ import javafx.util.Duration;
 class Config {
     
     int prueba2=123;
+    
+    int prueba3 =9000;
 
     static final boolean QUICK_MODE = false;
 
