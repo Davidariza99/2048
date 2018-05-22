@@ -4,10 +4,6 @@ import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 class Config {
-    
-    int prueba2=123;
-    char a = 'a';
-    int prueba3 =9000;
 
     static final boolean QUICK_MODE = false;
 
