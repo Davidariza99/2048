@@ -1,27 +1,42 @@
 package Datos;
 
 import java.util.Random;
+import LÃ³gica.Cor;
 
 
-//Tablero clásico, modo X, supervivencia, y 5x5 6x6
+//Tablero clÃ¡sico, modo X, supervivencia, y 5x5 6x6
 public final class Tablero1 extends Tablero{
+	
+	//constructor
 
-	public Tablero1(int dim, RécordT rec) {
-		super(dim, rec);
+	public Tablero1(int dim, RÃ©cordT rec) {
+		super(dim , rec);
 		
 		
-		Número cuad[][]=new Número[dim][dim];
-		for (int i=0;i<dim;i++) {				//llena tablero de números vacíos
+		NÃºmero cuad[][]=new NÃºmero[dim][dim];
+		for (int i=0;i<dim;i++) {				//llena tablero de nÃºmeros vacÃ­os
 			for (int j=0;j<dim;j++) {
 				int [] pos = {i,j};
-				Número n=new Número(0, pos);
+				NÃºmero n=new NÃºmero(0, pos);
 				cuad[i][j] =n;
 			}
 		}
+		this.setCuadrÃ­cula(cuad);
 		
-		//SEGUIR: COLOCANDO DOS 2 ALEATORIOS
-	
-		this.setCuadrícula();
+		//Coloca dos 2 aleatorios
+		Random azar=new Random(System.currentTimeMillis());
+		int numF;
+		int numC;
+		for(int i =0;i<2;i++) {
+			do {
+			numF =azar.nextInt(dim);
+			numC =azar.nextInt(dim);
+			}while(!Cor.revisaDisponibilidad(this.getCuadrÃ­cula(), numF, numC));			
+			cuad[numF][numC].sumarVezJugada();
+			this.setCuadrÃ­cula(cuad);
+		}
+		//
 	}
+	//constructor
 
 }
