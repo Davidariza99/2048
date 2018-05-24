@@ -2,55 +2,79 @@ package Datos;
 
 public abstract class Tablero {
 	//atributos
-	private int dimensión, puntaje;
-	private Número[][] cuadrícula;
-	private RécordT récord;
+	private int dimensiÃ³n, puntaje;
+	private NÃºmero[][] cuadrÃ­cula;
+	private RÃ©cordT rÃ©cord;
 	//atributos
 	
 	
 
 	//constructor
-	public Tablero(int dim, RécordT rec) {
-		this.dimensión=dim;
-		this.setRécord(rec);
+	/**
+	 * Constructor
+	 * @param dim entero
+	 * @param rec recordT
+	 */
+	public Tablero(int dim, RÃ©cordT rec){
+		this.dimensiÃ³n=dim;
+		this.setRÃ©cord(rec);
+		this.setPuntaje(0);
 	}
 	//constructor
 
 	
 	//set y get
-	public void setCuadrícula(Número[][] cuad) {
-		this.cuadrícula=cuad;
+	public void setCuadrÃ­cula(NÃºmero[][] cuad) {
+		this.cuadrÃ­cula=cuad;
 	}
 	public void setPuntaje(int punt) {
 		this.puntaje=punt;
 	}
-	public void setRécord( RécordT rc) {
-		this.récord=rc;
+	public void setRÃ©cord( RÃ©cordT rc) {
+		this.rÃ©cord=rc;
 	}
-	public int getDimensión() {
-		return this.dimensión;
+	public int getDimensiÃ³n() {
+		return this.dimensiÃ³n;
 	}
 	public int getPuntaje() {
 		return this.puntaje;
 	}
-	public Número[][] getCuadrícula() {
-		return this.cuadrícula;
+	public NÃºmero[][] getCuadrÃ­cula() {
+		return this.cuadrÃ­cula;
 	}
-	public RécordT getRécord() {
-		return this.récord;
+	public RÃ©cordT getRÃ©cord() {
+		return this.rÃ©cord;
 	}
 	//set y get
 	
 	//toString
 	public int[][] toInt() {
-		int dim=this.getDimensión();
+		int dim=this.getDimensiÃ³n();
 		int convertida [][]=new int[dim][dim];
 		for(int i=0; i<dim; i++) {
 			for(int j=0; j<dim; j++) {
-				convertida[i][j]=this.getCuadrícula()[i][j].getValor();
+				convertida[i][j]=this.getCuadrÃ­cula()[i][j].getValor();
 			}
 		}
 		return convertida;
+	}
+	@Override
+	public String toString() {
+		String convertidaS="";
+		int dim=this.getDimensiÃ³n();
+		for(int i=0; i<dim; i++) {
+			for(int j=0; j<dim; j++) {
+				if(this.getCuadrÃ­cula()[i][j].getValor()==1) {
+					convertidaS=convertidaS+"0";
+				}else{
+				convertidaS=convertidaS+Integer.toString(this.getCuadrÃ­cula()[i][j].getValor());
+				}
+			}
+			convertidaS=convertidaS+"\n";
+		}
+		
+		return convertidaS;
+		
 	}
 	//toString
 }
