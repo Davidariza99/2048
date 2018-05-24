@@ -1,16 +1,16 @@
 package Datos;
 
-public class N煤mero {
+public class N鷐ero {
 	//atributos
 	private int valor, vecesJugadas;
-	private int[] posici贸n;
-	private boolean mezclable, vac铆a, desaparece;
+	private int[] posici髇;
+	private boolean mezclable, vac韆, desaparece;
 	//atributos
 	
 	//constructor
-	public N煤mero (int vez, int[] pos) {
+	public N鷐ero (int vez, int[] pos) {
 		this.setVecesJugadas(vez);
-		this.posici贸n=pos;
+		this.posici髇=pos;
 		this.mezclable=false;
 		this.desaparece=false;
 	}
@@ -21,25 +21,25 @@ public class N煤mero {
 		this.vecesJugadas=veces;
 		this.valor=(int)Math.pow(2, this.vecesJugadas);
 		if (this.valor==1) {
-			this.vac铆a=true;
+			this.vac韆=true;
 		}else {
-			this.vac铆a=false;
+			this.vac韆=false;
 		}
 	}
 	public void sumarVezJugada() {
 		this.vecesJugadas++;
 		this.valor=(int)Math.pow(2, this.vecesJugadas);
 		if (this.valor==1) {
-			this.vac铆a=true;
+			this.vac韆=true;
 		}else {
-			this.vac铆a=false;
+			this.vac韆=false;
 		}
 	}
-	public void setPosici贸n(int[] coor) {
+	public void setPosici髇(int[] coor) {
 		try {
-		this.posici贸n=coor;
+		this.posici髇=coor;
 		}catch(Exception e) {
-			System.out.println("dimensi贸n de coor no corresponde a la del atributo posici贸n de N煤mero");
+			System.out.println("dimensi髇 de coor no corresponde a la del atributo posici髇 de N鷐ero");
 		}
 	}
 	public void setMezclable(boolean mez) {
@@ -55,14 +55,14 @@ public class N煤mero {
 	public int getVecesJugadas() {
 		return this.vecesJugadas;
 	}
-	public int[] getPosici贸n() {
-		return this.posici贸n;
+	public int[] getPosici髇() {
+		return this.posici髇;
 	}
 	public boolean getMezclabe() {
 		return this.mezclable;
 	}
-	public boolean getVac铆a() {
-		return this.vac铆a;
+	public boolean getVac韆() {
+		return this.vac韆;
 	}
 	public boolean getDesaparece() {
 		return this.desaparece;

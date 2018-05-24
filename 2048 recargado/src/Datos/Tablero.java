@@ -2,9 +2,9 @@ package Datos;
 
 public abstract class Tablero {
 	//atributos
-	private int dimensiÃ³n, puntaje;
-	private NÃºmero[][] cuadrÃ­cula;
-	private RÃ©cordT rÃ©cord;
+	private int dimensión, puntaje;
+	private Número[][] cuadrícula;
+	private RécordT récord;
 	//atributos
 	
 	
@@ -15,45 +15,45 @@ public abstract class Tablero {
 	 * @param dim entero
 	 * @param rec recordT
 	 */
-	public Tablero(int dim, RÃ©cordT rec){
-		this.dimensiÃ³n=dim;
-		this.setRÃ©cord(rec);
+	public Tablero(int dim, RécordT rec){
+		this.dimensión=dim;
+		this.setRécord(rec);
 		this.setPuntaje(0);
 	}
 	//constructor
 
 	
 	//set y get
-	public void setCuadrÃ­cula(NÃºmero[][] cuad) {
-		this.cuadrÃ­cula=cuad;
+	public void setCuadrícula(Número[][] cuad) {
+		this.cuadrícula=cuad;
 	}
 	public void setPuntaje(int punt) {
 		this.puntaje=punt;
 	}
-	public void setRÃ©cord( RÃ©cordT rc) {
-		this.rÃ©cord=rc;
+	public void setRécord( RécordT rc) {
+		this.récord=rc;
 	}
-	public int getDimensiÃ³n() {
-		return this.dimensiÃ³n;
+	public int getDimensión() {
+		return this.dimensión;
 	}
 	public int getPuntaje() {
 		return this.puntaje;
 	}
-	public NÃºmero[][] getCuadrÃ­cula() {
-		return this.cuadrÃ­cula;
+	public Número[][] getCuadrícula() {
+		return this.cuadrícula;
 	}
-	public RÃ©cordT getRÃ©cord() {
-		return this.rÃ©cord;
+	public RécordT getRécord() {
+		return this.récord;
 	}
 	//set y get
 	
 	//toString
 	public int[][] toInt() {
-		int dim=this.getDimensiÃ³n();
+		int dim=this.getDimensión();
 		int convertida [][]=new int[dim][dim];
 		for(int i=0; i<dim; i++) {
 			for(int j=0; j<dim; j++) {
-				convertida[i][j]=this.getCuadrÃ­cula()[i][j].getValor();
+				convertida[i][j]=this.getCuadrícula()[i][j].getValor();
 			}
 		}
 		return convertida;
@@ -61,13 +61,13 @@ public abstract class Tablero {
 	@Override
 	public String toString() {
 		String convertidaS="";
-		int dim=this.getDimensiÃ³n();
+		int dim=this.getDimensión();
 		for(int i=0; i<dim; i++) {
 			for(int j=0; j<dim; j++) {
-				if(this.getCuadrÃ­cula()[i][j].getValor()==1) {
+				if(this.getCuadrícula()[i][j].getValor()==1) {
 					convertidaS=convertidaS+"0";
 				}else{
-				convertidaS=convertidaS+Integer.toString(this.getCuadrÃ­cula()[i][j].getValor());
+				convertidaS=convertidaS+Integer.toString(this.getCuadrícula()[i][j].getValor());
 				}
 			}
 			convertidaS=convertidaS+"\n";
